@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Ciber Servicios</title>
+</head>
+<body>
+    <script src="Scrip.js"></script>
+    
+    <header>
+       
+            <div class="rel">
+
+                <div class="perro">
+                    <img id="socialImage" src="Camiseta Gato Ilustrado Blanco y Negro.png" alt="logo" style="width: 200px; height: 200px;">
+                    <script>
+                       document.addEventListener("scroll", function() {
+       const headerHeight = document.querySelector("nav").offsetHeight;
+       const socialImage = document.getElementById("socialImage");
+   
+       if (window.scrollY > headerHeight) {
+           socialImage.style.display = "none"; // Oculta la imagen
+       } else {
+           socialImage.style.display = "block"; // Muestra la imagen
+       }
+   });
+   
+                    </script>
+                    </div>
+
+                <div class="R" id="pa">
+              <div class="o"><a href="https://www.facebook.com/share/viriQfNhaXFYMDCT/" target="_blank">
+                   <img width="50" height="50" src="facebook.png" alt="5"></a></div>
+                   <div class="a"><a href="https://www.instagram.com/cesar_arevalo5/profilecard/?igsh=bXlrNDJrMzU4dnM2" target="_blank">
+                     <img width="50" height="50"src="gato.png" alt="5">
+                 </a></div>
+                 </div>
+                
+            </div>
+        <nav>
+            <ul>
+                <div class="encierro">
+                <div class="gato"><li><a href="#conocenos">Conócenos</a></li></div><div class="y"></div>
+                <div class="gato"><li><a href="#Precios">Precios</a></li></div><div class="y"></div>
+                <div class="gato"><li><a href="#contacto">Contacto</a></li></div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+
+        <section id="conocenos">
+            <h2>Conócenos</h2>
+            <div class="conocenos-container">
+                <div class="conocenos-item">
+                    <img id="conocenos-img" src="conosenos.jpeg" alt="Nuestro equipo">
+                    <h3>Nuestra Empresa</h3>
+                    <p class="hidden-text">En Sinergia Digital, nos dedicamos a brindar soluciones digitales efectivas y personalizadas. Nuestra misión es empoderar a nuestros clientes para que alcancen sus objetivos a través de herramientas y estrategias innovadoras.</p>
+                </div>
+                <div class="conocenos-item">
+                    <img id="conocenos-img" src="web.webp" alt="Nuestra misión">
+                    <h3>Sinergia Digital</h3>
+                    <p class="hidden-text">La "sinergia digital" se refiere a la colaboración efectiva entre distintas disciplinas y tecnologías en el entorno digital.</p>
+                </div>
+                <div class="conocenos-item">
+                    <img id="conocenos-img" src="web 2.jpg" alt="Nuestros valores">
+                    <h3>Nuestra Misión</h3>
+                    <p class="hidden-text">Ofrecer soluciones efectivas y personalizadas para cada cliente, garantizando su satisfacción y confianza.</p>
+                </div>
+            </div>
+        
+        </section>
+        
+        <!-- Modal. comentado por falta de conocimiento a respecto jijiji -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modal-gato">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+    </div>
+</div>             
+
+<script>
+    // Obtener el modal
+    var modal = document.getElementById("modal");
+    
+    // Obtener los elementos que abren el modal
+    var items = document.querySelectorAll(".conocenos-item");
+    
+    // Obtener el elemento <span> que cierra el modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Agregar evento click a cada item
+    items.forEach(function(item) {
+        item.addEventListener("click", function() {
+            var gato = this.querySelector("img").innerText;
+            var title = this.querySelector("h3").innerText;
+            var description = this.querySelector("p").innerText;
+
+            document.getElementById("modal-gato").innerText = gato;
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-description").innerText = description;
+
+            modal.style.display = "block"; // Mostrar el modal
+        });
+    });
+
+    // Cuando el usuario hace clic en <span> (x), cierra el modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cuando el usuario hace clic fuera del modal, también lo cierra
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+        <section id="servicios">
+            <h2>Servicios que Ofrecemos</h2>
+            <div class="servicio">
+                <h3>Creación de Páginas Web</h3>
+                <div class="r"><p>Desarrollamos páginas web básicas y atractivas que cumplen con tus necesidades. Nos enfocamos en la usabilidad y el diseño responsivo para que tu sitio se vea bien en cualquier dispositivo.</p></div>
+            </div>
+            <div class="servicio">
+                <h3>Impresión y Escaneo de Archivos</h3>
+                <div class="r"><p>Ofrecemos servicios de impresión de alta calidad y escaneo de documentos. Ya sea para uso personal o empresarial, garantizamos resultados profesionales y eficientes.</p></div>
+            </div>
+            <div class="servicio">
+                <h3>Creación y Redacción de Documentos</h3>
+                <div class="r"><p>Nos especializamos en la redacción de documentos en Excel y Word. Desde informes hasta presentaciones, aseguramos que tu contenido sea claro y profesional.</p></div>
+            </div>
+        </section>
+        <h2>Precios</h2>
+        <div class="pricing-container" id="Precios">
+            <div class="pricing-card">
+                <h3>Precios por Servicio</h3>
+                <ul>
+                    <li>Impresión (por página): <strong>$0.10</strong></li>
+                    <li>Escaneo (por documento): <strong>$0.15</strong></li>
+                    <li>Redacción de Archivos: <strong>$10.00 por hora</strong></li>
+                    <li>Creación de Página Web (básica): <strong>$50.00</strong></li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Paquetes Especiales</h3>
+                <ul>
+                    <li>Paquete Impresión: <strong>$20.00</strong> (200 páginas)</li>
+                    <li>Paquete Escaneo: <strong>$25.00</strong> (200 documentos)</li>
+                    <li>Paquete Redacción: <strong>$90.00</strong> (10 horas)</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Descuentos por Volumen</h3>
+                <ul>
+                    <li>10% de descuento en 500 páginas impresas</li>
+                    <li>15% de descuento en más de 100 documentos escaneados</li>
+                    <li>20% de descuento en redacción de más de 20 horas</li>
+                </ul>
+            </div>
+    
+
+            <div class="pricing-card">
+                <h3>Especificos</h3>
+                <ul>
+                    <li>Exel (formulas u otros.): <strong>Precio por negociación</strong></li>
+                    <li>Crear archivos word (Por tema de elección.): <strong>Precio por negociación</strong></li>
+                    <li>Extras de consulta. <strong>Precio por negociación</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <section id="bitcoin-payment" class="payment-section">
+            <h2>Paga con Bitcoin</h2>
+            <p>Dirección de Bitcoin: <strong>3JwuDvJTebcMv94Jak2DjsUiBRiJ7EWXh9</strong></p>
+            <img src="Imagen de WhatsApp 2024-10-20 a las 21.07.35_ba81623e.jpg" alt="Código QR para Bitcoin" class="qr-code">
+            <p>Escanea el código QR o copia la dirección para realizar el pago.</p>
+        </section>
+        
+
+        <section class="envio">
+            <h2>Precios de Envío</h2>
+            <div class="envio-container">
+                <div class="envio-item">
+                    <h3>Envío Nacional</h3>
+                    <p>Precio: <strong>$50</strong></p>
+                    <p>Tiempo estimado: 2-3 días hábiles</p>
+                </div>
+                <div class="envio-item">
+                    <h3>Envío Internacional</h3>
+                    <p>Precio: <strong>$150</strong></p>
+                    <p>Tiempo estimado: 5-7 días hábiles</p>
+                </div>
+            </div>
+        </section>
+        
+        
+
+    </section>
+    
+        <section id="contacto">
+                <button id="showNotification" class="gato">Contáctanos</button>
+                <div class="notification" id="notification">
+                    <strong>¡Conéctate con nosotros!</strong>
+                    <p>¿Tienes preguntas? ¡Estamos aquí para ayudarte! Haz clic para chatear con nosotros en WhatsApp.</p>
+                    <a href="https://wa.me/50360661198" target="_blank">
+                        <button class="gato">Chatear ahora</button>
+                    </a>
+                    <button onclick="closeNotification()" class="gato">Cerrar</button>
+                </div>
+    
+            <script>
+                // Mostrar notificación
+                document.getElementById('showNotification').onclick = function() {
+                    document.getElementById('notification').style.display = 'block';
+                };
+            
+                // Cerrar notificación
+                function closeNotification() {
+                    document.getElementById('notification').style.display = 'none';
+                }
+            </script>
+
+<section id="faqs">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq">
+        <h3 class="faq-question">¿Qué servicios ofrecen?</h3>
+        <p class="faq-answer">Ofrecemos creación de páginas web, impresión y escaneo de documentos, así como redacción de documentos en Excel y Word.</p>
+    </div>
+    <div class="faq">
+        <h3 class="faq-question">¿Cuánto tiempo tarda en completarse un proyecto?</h3>
+        <p class="faq-answer">El tiempo de entrega depende del tipo de servicio. Normalmente, una página web básica puede tardar entre 1 y 2 semanas.</p>
+    </div>
+    <div class="faq">
+        <h3 class="faq-question">¿Ofrecen soporte después de completar el proyecto?</h3>
+        <p class="faq-answer">Sí, ofrecemos soporte técnico durante un mes después de la entrega para resolver cualquier duda o inconveniente.</p>
+    </div>
+    <div class="faq">
+        <h3 class="faq-question">¿Cómo puedo solicitar un presupuesto?</h3>
+        <p class="faq-answer">Puedes contactarnos a través de las plataformas que proporciona nuestra página, y te enviaremos un presupuesto personalizado.</p>
+    </div>
+
+        
+
+</section>
+
+            
+        </section>
+        
+    </section>
+
+    <footer>
+        <img src="C.png" alt="logo" width="50" height="50"><p>.  César Arévalo &reg;    .</p>
+        <p>&copy; 2024 Sinergia Digital. Todos los derechos reservados.</p>
+    </footer>
+
+    
+</body>
+</html>
